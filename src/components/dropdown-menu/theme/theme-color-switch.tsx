@@ -2,6 +2,8 @@
 
 import { useContext } from "react"
 
+import { Palette } from "lucide-react"
+
 import { ThemeContext } from "@/components/provider/theme/theme-provider"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,7 +20,7 @@ export const ThemeColorSwitch = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <div className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Palette className="h-[1.2rem] w-[1.2rem] text-primary"/>
           <span className="sr-only">Toggle theme color</span>
         </Button>
       </DropdownMenuTrigger>
