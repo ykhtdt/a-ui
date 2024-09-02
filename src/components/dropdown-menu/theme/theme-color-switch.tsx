@@ -2,7 +2,7 @@
 
 import { useContext } from "react"
 
-import { ThemeContext } from "@/components/provider/theme-provider"
+import { ThemeContext } from "@/components/provider/theme/theme-provider"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,

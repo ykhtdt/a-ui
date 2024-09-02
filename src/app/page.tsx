@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 
-import { ThemeColorSwitch } from "@/components/button/theme-color-switch"
-import { ThemeSwitch } from "@/components/button/theme-switch"
+import { ThemeColorSwitch } from "@/components/dropdown-menu/theme/theme-color-switch"
+import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
 
 const Home = () => {
   return (
