@@ -4,21 +4,21 @@ import type { ReactNode, Dispatch } from "react"
 
 import { useState, useEffect, createContext } from "react"
 
-export type Theme = "light" | "dark"
-export type ColorTheme = "zinc" | "blue" | "green"
+export type Theme = "light" | "dark" | "system"
+export type ThemeColor = "zinc" | "blue" | "green"
 
 interface ThemeContextValue {
   theme: Theme
-  colorTheme: ColorTheme
+  themeColor: ThemeColor
   setTheme: Dispatch<React.SetStateAction<Theme>>
-  setColorTheme: Dispatch<React.SetStateAction<ColorTheme>>
+  setThemeColor: Dispatch<React.SetStateAction<ThemeColor>>
 }
 
 export const ThemeContext = createContext<ThemeContextValue>({
   theme: "light",
-  colorTheme: "zinc",
+  themeColor: "zinc",
   setTheme: () => {},
-  setColorTheme: () => {}
+  setThemeColor: () => {}
 })
 
 export const ThemeProvider = ({
@@ -26,16 +26,38 @@ export const ThemeProvider = ({
 }: {
   children: ReactNode
 }) => {
-  const [theme, setTheme] = useState<Theme>("light")
-  const [colorTheme, setColorTheme] = useState<ColorTheme>("blue")
+  const [theme, setTheme] = useState<Theme>("system")
+  const [themeColor, setThemeColor] = useState<ThemeColor>("blue")
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme)
-    document.documentElement.setAttribute("data-color-theme", colorTheme)
-  }, [theme, colorTheme])
+    const root = document.documentElement
+
+    const systemThemeListener = (e: MediaQueryListEvent) => {
+      if (theme === "system") {
+        setTheme(e.matches ? "dark" : "light")
+      }
+    }
+
+    if (theme === "system") {
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      setTheme(prefersDarkScheme.matches ? "dark" : "light")
+
+      prefersDarkScheme.addEventListener("change", systemThemeListener)
+    }
+
+    root.setAttribute("data-theme", theme)
+    root.setAttribute("data-color-theme", themeColor)
+    root.className = `color-theme-${themeColor} ${theme}`
+
+    return () => {
+      if (theme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", systemThemeListener)
+      }
+    }
+  }, [theme, themeColor])
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, colorTheme, setColorTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, themeColor, setThemeColor }}>
       {children}
     </ThemeContext.Provider>
   )
