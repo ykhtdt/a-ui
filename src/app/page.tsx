@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button"
 
+import { ThemeColorSwitch } from "@/components/button/theme-color-switch"
 import { ThemeSwitch } from "@/components/button/theme-switch"
 
 const Home = () => {
   return (
     <div>
+      <ThemeColorSwitch />
       <ThemeSwitch />
       <Button variant="default">
         Shadcn/ui Button
       </Button>
-      <Button variant="outline">
+      <Button variant="secondary">
         Shadcn/ui Button
       </Button>
-      <Button variant="secondary">
+      <Button variant="outline">
         Shadcn/ui Button
       </Button>
       <Button variant="link">
