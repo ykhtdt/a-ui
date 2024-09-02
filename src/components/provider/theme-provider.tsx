@@ -4,6 +4,8 @@ import type { ReactNode, Dispatch } from "react"
 
 import { useState, useEffect, createContext } from "react"
 
+import ThemeScript from "./theme-script"
+
 export type Theme = "light" | "dark" | "system"
 export type ThemeColor = "zinc" | "blue" | "green"
 
@@ -26,8 +28,19 @@ export const ThemeProvider = ({
 }: {
   children: ReactNode
 }) => {
-  const [theme, setTheme] = useState<Theme>("system")
-  const [themeColor, setThemeColor] = useState<ThemeColor>("blue")
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") as Theme || "system"
+    }
+    return "system"
+  })
+
+  const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("themeColor") as ThemeColor || "blue"
+    }
+    return "blue"
+  })
 
   useEffect(() => {
     const root = document.documentElement
@@ -45,6 +58,9 @@ export const ThemeProvider = ({
       prefersDarkScheme.addEventListener("change", systemThemeListener)
     }
 
+    localStorage.setItem("theme", theme)
+    localStorage.setItem("themeColor", themeColor)
+
     root.setAttribute("data-theme", theme)
     root.setAttribute("data-color-theme", themeColor)
     root.className = `color-theme-${themeColor} ${theme}`
@@ -58,6 +74,7 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeColor, setThemeColor }}>
+      <ThemeScript />
       {children}
     </ThemeContext.Provider>
   )
