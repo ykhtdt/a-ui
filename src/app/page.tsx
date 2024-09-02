@@ -13,22 +13,22 @@ const Home = () => {
         </div>
         <div className="flex flex-row justify-center gap-4">
           <Button variant="default">
-            Shadcn/ui Button
+            Button
           </Button>
           <Button variant="secondary">
-            Shadcn/ui Button
+            Button
           </Button>
           <Button variant="outline">
-            Shadcn/ui Button
+            Button
           </Button>
           <Button variant="link">
-            Shadcn/ui Button
+            Button
           </Button>
           <Button variant="destructive">
-            Shadcn/ui Button
+            Button
           </Button>
           <Button variant="ghost">
-            Shadcn/ui Button
+            Button
           </Button>
         </div>
       </div>
