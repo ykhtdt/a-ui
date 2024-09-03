@@ -138,19 +138,19 @@ export const Header = () => {
             </span>
           </Link>
           <nav className="flex flex-col gap-4">
-            <Link href="/docs" className="text-foreground text-sm">
+            <Link href="/" className="text-foreground text-sm">
               Docs
             </Link>
-            <Link href="/themes" className="text-foreground text-sm">
+            <Link href="/" className="text-foreground text-sm">
               Themes
             </Link>
-            <Link href="/colors" className="text-foreground text-sm">
+            <Link href="/" className="text-foreground text-sm">
               Colors
             </Link>
-            <Link href="/examples" className="text-foreground text-sm">
+            <Link href="/" className="text-foreground text-sm">
               Examples
             </Link>
-            <Link href="/figma" className="text-foreground text-sm">
+            <Link href="/" className="text-foreground text-sm">
               Figma
             </Link>
           </nav>
