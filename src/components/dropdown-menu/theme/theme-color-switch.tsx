@@ -34,6 +34,12 @@ export const ThemeColorSwitch = () => {
         <DropdownMenuItem onClick={() => setThemeColor("green")}>
           Green
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setThemeColor("purple")}>
+          Purple
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setThemeColor("red")}>
+          Red
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

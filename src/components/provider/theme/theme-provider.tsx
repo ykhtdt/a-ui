@@ -7,7 +7,7 @@ import { useState, useEffect, createContext } from "react"
 import ThemeScript from "./theme-script"
 
 export type Theme = "light" | "dark" | "system"
-export type ThemeColor = "zinc" | "blue" | "green"
+export type ThemeColor = "zinc" | "blue" | "green" | "purple" | "red"
 
 interface ThemeContextValue {
   theme: Theme
