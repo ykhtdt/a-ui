@@ -62,19 +62,19 @@ export const Header = () => {
             <div className="flex flex-1 items-center justify-end space-x-2">
               <nav className="flex items-center gap-8 text-sm lg:gap-10 transition-all">
                 <div className="hidden sm:flex items-center gap-4 lg:gap-6 transition-all">
-                  <Link href="/docs" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
                     Docs
                   </Link>
-                  <Link href="/themes" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
                     Themes
                   </Link>
-                  <Link href="/colors" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
                     Colors
                   </Link>
-                  <Link href="/examples" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
                     Examples
                   </Link>
-                  <Link href="/figma" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
                     Figma
                   </Link>
                 </div>
