@@ -5,7 +5,7 @@ import { pretendard, hahmlet, source } from "@/fonts/font"
 import { ThemeProvider } from "@/components/provider/theme/theme-provider"
 import { Header } from "@/components/header/header"
 
-import "./globals.css"
+import "@/styles/globals.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
