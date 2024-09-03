@@ -5,7 +5,7 @@ import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
 
 const Home = () => {
   return (
-    <main className="flex-1 pt-2 sm:pt-4">
+    <main className="flex-1 mt-4">
       <div className="container max-w-screen-2xl flex flex-col">
         <div className="flex flex-row justify-center gap-4 mb-8">
           <ThemeColorSwitch />
