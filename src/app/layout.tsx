@@ -1,12 +1,11 @@
 import type { Metadata } from "next"
 
-import { Inter } from "next/font/google"
+import { pretendard, hahmlet, source } from "@/fonts/font"
 
 import { ThemeProvider } from "@/components/provider/theme/theme-provider"
+import { Header } from "@/components/header/header"
 
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,9 +19,12 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${pretendard.variable} ${hahmlet.variable} ${source.variable} bg-background min-h-screen`}>
         <ThemeProvider>
-          {children}
+          <div className="relative flex min-h-screen flex-col bg-background">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
