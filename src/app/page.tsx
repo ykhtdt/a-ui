@@ -5,13 +5,13 @@ import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
 
 const Home = () => {
   return (
-    <div className="pt-8">
-      <div className="max-w-7xl mx-auto">
+    <main className="flex-1 pt-2 sm:pt-4">
+      <div className="container max-w-screen-2xl flex flex-col">
         <div className="flex flex-row justify-center gap-4 mb-8">
           <ThemeColorSwitch />
           <ThemeSwitch />
         </div>
-        <div className="flex flex-row justify-center gap-4">
+        <div className="flex flex-row justify-center gap-4 flex-wrap">
           <Button variant="default">
             Button
           </Button>
@@ -32,7 +32,7 @@ const Home = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
