@@ -20,7 +20,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${pretendard.variable} ${hahmlet.variable} ${source.variable} bg-background min-h-screen`}>
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="dark" defaultThemeColor="purple">
           <div className="relative flex min-h-screen flex-col bg-background">
             <Header />
             {children}

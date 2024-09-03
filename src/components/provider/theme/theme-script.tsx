@@ -1,10 +1,18 @@
-const ThemeScript = () => {
+import type { Theme, ThemeColor } from "./theme-provider"
+
+const ThemeScript = ({
+  defaultTheme = "system",
+  defaultThemeColor = "zinc"
+}: {
+  defaultTheme?: Theme
+  defaultThemeColor?: ThemeColor
+}) => {
   const scriptContent = `
     (function() {
       const savedTheme = localStorage.getItem("theme");
       const savedThemeColor = localStorage.getItem("themeColor");
-      let theme = "system";
-      let themeColor = "blue";
+      let theme = "${defaultTheme}";
+      let themeColor = "${defaultThemeColor}";
       
       if (savedTheme) {
         theme = savedTheme;

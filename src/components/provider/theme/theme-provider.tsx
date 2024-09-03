@@ -24,22 +24,26 @@ export const ThemeContext = createContext<ThemeContextValue>({
 })
 
 export const ThemeProvider = ({
-  children
+  children,
+  defaultTheme = "system",
+  defaultThemeColor = "zinc",
 }: {
   children: ReactNode
+  defaultTheme?: Theme
+  defaultThemeColor?: ThemeColor
 }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") as Theme || "system"
+      return localStorage.getItem("theme") as Theme || defaultTheme
     }
-    return "system"
+    return defaultTheme
   })
 
   const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("themeColor") as ThemeColor || "blue"
+      return localStorage.getItem("themeColor") as ThemeColor || defaultThemeColor
     }
-    return "blue"
+    return defaultThemeColor
   })
 
   useEffect(() => {
@@ -74,7 +78,7 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeColor, setThemeColor }}>
-      <ThemeScript />
+      <ThemeScript defaultTheme={defaultTheme} defaultThemeColor={defaultThemeColor} />
       {children}
     </ThemeContext.Provider>
   )
