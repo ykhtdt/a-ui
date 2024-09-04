@@ -32,7 +32,7 @@ const Home = () => {
           <Button variant="ghost">Button</Button>
         </div>
 
-        <ColorThemeCard />
+        <ColorThemeCard targetColorTheme="zinc" />
 
         <div className="h-[1500px]" />
       </div>
