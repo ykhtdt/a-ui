@@ -6,31 +6,31 @@ import { useState, useEffect, createContext } from "react"
 
 import ThemeScript from "./theme-script"
 
+export type ColorTheme = "zinc" | "blue" | "green" | "purple" | "red"
 export type Theme = "light" | "dark" | "system"
-export type ThemeColor = "zinc" | "blue" | "green" | "purple" | "red"
 
 interface ThemeContextValue {
   theme: Theme
-  themeColor: ThemeColor
+  colorTheme: ColorTheme
   setTheme: Dispatch<React.SetStateAction<Theme>>
-  setThemeColor: Dispatch<React.SetStateAction<ThemeColor>>
+  setColorTheme: Dispatch<React.SetStateAction<ColorTheme>>
 }
 
 export const ThemeContext = createContext<ThemeContextValue>({
   theme: "light",
-  themeColor: "zinc",
+  colorTheme: "zinc",
   setTheme: () => {},
-  setThemeColor: () => {}
+  setColorTheme: () => {}
 })
 
 export const ThemeProvider = ({
   children,
   defaultTheme = "system",
-  defaultThemeColor = "zinc",
+  defaultColorTheme = "zinc",
 }: {
   children: ReactNode
   defaultTheme?: Theme
-  defaultThemeColor?: ThemeColor
+  defaultColorTheme?: ColorTheme
 }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
@@ -39,11 +39,11 @@ export const ThemeProvider = ({
     return defaultTheme
   })
 
-  const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
+  const [colorTheme, setColorTheme] = useState<ColorTheme>(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("themeColor") as ThemeColor || defaultThemeColor
+      return localStorage.getItem("colorTheme") as ColorTheme || defaultColorTheme
     }
-    return defaultThemeColor
+    return defaultColorTheme
   })
 
   useEffect(() => {
@@ -63,22 +63,22 @@ export const ThemeProvider = ({
     }
 
     localStorage.setItem("theme", theme)
-    localStorage.setItem("themeColor", themeColor)
+    localStorage.setItem("colorTheme", colorTheme)
 
     root.setAttribute("data-theme", theme)
-    root.setAttribute("data-color-theme", themeColor)
-    root.className = `color-theme-${themeColor} ${theme}`
+    root.setAttribute("data-color-theme", colorTheme)
+    root.className = `color-theme-${colorTheme} ${theme}`
 
     return () => {
       if (theme === "system") {
         window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", systemThemeListener)
       }
     }
-  }, [theme, themeColor])
+  }, [theme, colorTheme])
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, themeColor, setThemeColor }}>
-      <ThemeScript defaultTheme={defaultTheme} defaultThemeColor={defaultThemeColor} />
+    <ThemeContext.Provider value={{ theme, setTheme, colorTheme, setColorTheme }}>
+      <ThemeScript defaultTheme={defaultTheme} defaultColorTheme={defaultColorTheme} />
       {children}
     </ThemeContext.Provider>
   )

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export const ThemeColorSwitch = () => {
-  const { setThemeColor } = useContext(ThemeContext)
+  const { setColorTheme } = useContext(ThemeContext)
 
   return (
     <DropdownMenu>
@@ -25,19 +25,19 @@ export const ThemeColorSwitch = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setThemeColor("zinc")}>
+        <DropdownMenuItem onClick={() => setColorTheme("zinc")}>
           Zinc
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeColor("blue")}>
+        <DropdownMenuItem onClick={() => setColorTheme("blue")}>
           Blue
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeColor("green")}>
+        <DropdownMenuItem onClick={() => setColorTheme("green")}>
           Green
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeColor("purple")}>
+        <DropdownMenuItem onClick={() => setColorTheme("purple")}>
           Purple
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeColor("red")}>
+        <DropdownMenuItem onClick={() => setColorTheme("red")}>
           Red
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -1,21 +1,23 @@
-import type { Theme, ThemeColor } from "./theme-provider"
+import type { Theme, ColorTheme } from "./theme-provider"
 
 const ThemeScript = ({
   defaultTheme = "system",
-  defaultThemeColor = "zinc"
+  defaultColorTheme = "zinc"
 }: {
   defaultTheme?: Theme
-  defaultThemeColor?: ThemeColor
+  defaultColorTheme?: ColorTheme
 }) => {
   const scriptContent = `
     (function() {
       const savedTheme = localStorage.getItem("theme");
       const savedThemeColor = localStorage.getItem("themeColor");
       let theme = "${defaultTheme}";
-      let themeColor = "${defaultThemeColor}";
+      let themeColor = "${defaultColorTheme}";
       
       if (savedTheme) {
         theme = savedTheme;
+      } else if (theme) {
+        // console.log(theme);
       } else {
         theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
