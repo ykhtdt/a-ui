@@ -10,9 +10,9 @@ const ThemeScript = ({
   const scriptContent = `
     (function() {
       const savedTheme = localStorage.getItem("theme");
-      const savedThemeColor = localStorage.getItem("themeColor");
+      const savedColorTheme = localStorage.getItem("colorTheme");
       let theme = "${defaultTheme}";
-      let themeColor = "${defaultColorTheme}";
+      let colorTheme = "${defaultColorTheme}";
       
       if (savedTheme) {
         theme = savedTheme;
@@ -22,13 +22,13 @@ const ThemeScript = ({
         theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
 
-      if (savedThemeColor) {
-        themeColor = savedThemeColor;
+      if (savedColorTheme) {
+        colorTheme = savedColorTheme;
       }
 
       document.documentElement.setAttribute("data-theme", theme);
-      document.documentElement.setAttribute("data-color-theme", themeColor);
-      document.documentElement.className = \`color-theme-\${themeColor} \${theme}\`;
+      document.documentElement.setAttribute("data-color-theme", colorTheme);
+      document.documentElement.className = \`color-theme-\${colorTheme} \${theme}\`;
     })();
   `
 
