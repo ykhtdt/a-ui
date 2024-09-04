@@ -11,6 +11,14 @@
 }
 
 @layer base {
+  html {
+    scrollbar-width: thin;
+  }
+  
+  [data-theme="dark"] {
+    scrollbar-color: #888888 #4D4D4D;
+  }
+
   * {
     @apply border-border;
   }
@@ -19,8 +27,4 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans), Helvetica, Arial;
   }
-}
-
-* {
-  scrollbar-width: thin;
 }
