@@ -55,7 +55,7 @@ export const Header = () => {
               </Link>
             </div>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-5 w-5 sm:hidden">
+              <Button variant="ghost" size="icon" className="sm:hidden">
                 <HamburgerMenuIcon className="h-5 w-5" />
               </Button>
             </SheetTrigger>
