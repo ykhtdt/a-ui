@@ -31,6 +31,7 @@ const Home = () => {
             Button
           </Button>
         </div>
+        <div className="h-[1500px]" />
       </div>
     </main>
   )
