@@ -1,8 +1,8 @@
 import type { Theme, ColorTheme } from "./theme-provider"
 
 const ThemeScript = ({
-  defaultTheme = "system",
-  defaultColorTheme = "zinc"
+  defaultTheme,
+  defaultColorTheme,
 }: {
   defaultTheme?: Theme
   defaultColorTheme?: ColorTheme
@@ -17,7 +17,6 @@ const ThemeScript = ({
       if (savedTheme) {
         theme = savedTheme;
       } else if (theme) {
-        // console.log(theme);
       } else {
         theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }

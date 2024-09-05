@@ -10,27 +10,27 @@ export type ColorTheme = "zinc" | "blue" | "green" | "purple" | "red"
 export type Theme = "light" | "dark" | "system"
 
 interface ThemeContextValue {
-  theme: Theme
-  colorTheme: ColorTheme
+  theme?: Theme
+  colorTheme?: ColorTheme
   setTheme: Dispatch<React.SetStateAction<Theme>>
   setColorTheme: Dispatch<React.SetStateAction<ColorTheme>>
 }
 
 export const ThemeContext = createContext<ThemeContextValue>({
-  theme: "system",
-  colorTheme: "zinc",
+  theme: undefined,
+  colorTheme: undefined,
   setTheme: () => {},
   setColorTheme: () => {}
 })
 
 export const ThemeProvider = ({
   children,
-  defaultTheme = "system",
-  defaultColorTheme = "zinc",
+  defaultTheme,
+  defaultColorTheme,
 }: {
   children: ReactNode
-  defaultTheme?: Theme
-  defaultColorTheme?: ColorTheme
+  defaultTheme: Theme
+  defaultColorTheme: ColorTheme
 }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
