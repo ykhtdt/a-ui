@@ -2,9 +2,9 @@
 
 import type { ColorTheme } from "@/components/provider/theme/theme-provider"
 
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 
-import { BadgeIcon, BadgeCheckIcon } from "lucide-react"
+import { CircleIcon, CheckCircleIcon } from "lucide-react"
 
 import {
   Card,
@@ -25,6 +25,11 @@ export const ColorThemeCard = ({
   targetColorTheme,
 }: ColorThemeCardProps) => {
   const { theme, colorTheme, setColorTheme } = useContext(ThemeContext)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const handleColorThemeSelect = () => {
     setColorTheme(targetColorTheme)
@@ -52,8 +57,8 @@ export const ColorThemeCard = ({
             onClick={handleColorThemeSelect}
             className="w-full capitalize"
           >
-            {targetColorTheme === colorTheme ?
-              <BadgeCheckIcon className="mr-2 h-4 w-4" /> : <BadgeIcon className="mr-2 h-4 w-4" />
+            {isMounted && targetColorTheme === colorTheme ?
+              <CheckCircleIcon className="mr-2 h-4 w-4" /> : <CircleIcon className="mr-2 h-4 w-4" />
             }
             <span>
               {targetColorTheme} color theme
