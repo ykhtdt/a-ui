@@ -37,6 +37,16 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)"
       },
       colors: {
+        zinc: {
+          light: {
+            primary: "hsl(240 5.9% 10%)",
+            border: "hsl(240 5.9% 90%)",
+          },
+          dark: {
+            primary: "hsl(0 0% 98%)",
+            border: "hsl(240 3.7% 15.9%)",
+          }
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -1,4 +1,4 @@
-[data-theme="light"][data-color-theme="zinc"] {
+html[data-theme="light"] div[data-color-theme="zinc"] {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
@@ -26,7 +26,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="dark"][data-color-theme="zinc"] {
+html[data-theme="dark"] div[data-color-theme="zinc"] {
   --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
   --card: 240 10% 3.9%;
@@ -54,7 +54,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="light"][data-color-theme="blue"] {
+html[data-theme="light"] div[data-color-theme="blue"] {
   --background: 210 20% 98%;
   --foreground: 210 10% 10%;
   --card: 210 20% 98%;
@@ -82,7 +82,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="dark"][data-color-theme="blue"] {
+html[data-theme="dark"] div[data-color-theme="blue"] {
   --background: 210 20% 10%;
   --foreground: 210 10% 90%;
   --card: 210 20% 10%;
@@ -110,7 +110,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="light"][data-color-theme="green"] {
+html[data-theme="light"] div[data-color-theme="green"] {
   --background: 120 20% 98%;
   --foreground: 120 10% 10%;
   --card: 120 20% 98%;
@@ -138,7 +138,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="dark"][data-color-theme="green"] {
+html[data-theme="dark"] div[data-color-theme="green"] {
   --background: 120 20% 10%;
   --foreground: 120 10% 90%;
   --card: 120 20% 10%;
@@ -166,7 +166,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="light"][data-color-theme="purple"] {
+html[data-theme="light"] div[data-color-theme="purple"] {
   --background: 270 20% 98%;
   --foreground: 270 10% 10%;
   --card: 270 20% 98%;
@@ -194,7 +194,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="dark"][data-color-theme="purple"] {
+html[data-theme="dark"] div[data-color-theme="purple"] {
   --background: 270 20% 10%;
   --foreground: 270 10% 90%;
   --card: 270 20% 10%;
@@ -222,7 +222,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="light"][data-color-theme="red"] {
+html[data-theme="light"] div[data-color-theme="red"] {
   --background: 0 20% 98%;
   --foreground: 0 10% 10%;
   --card: 0 20% 98%;
@@ -250,7 +250,7 @@
   --radius: 0.5rem;
 }
 
-[data-theme="dark"][data-color-theme="red"] {
+html[data-theme="dark"] div[data-color-theme="red"] {
   --background: 0 20% 10%;
   --foreground: 0 10% 90%;
   --card: 0 20% 10%;

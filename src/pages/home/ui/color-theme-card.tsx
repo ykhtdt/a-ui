@@ -17,6 +17,8 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 import { ThemeContext } from "@/components/provider/theme/theme-provider"
 
+import "./color-theme-card.css"
+
 interface ColorThemeCardProps {
   targetColorTheme: ColorTheme
 }
@@ -36,36 +38,39 @@ export const ColorThemeCard = ({
   }
 
   return (
-    <div data-color-theme={targetColorTheme} data-theme={theme} className="theme-wrapper">
-      <Card className="w-64 rounded-lg">
-        <CardHeader className="space-y-2">
-          <Skeleton className="w-1/4 h-4 animate-none" />
-          <Skeleton className="w-3/4 h-4 animate-none" />
-        </CardHeader>
-        <CardContent className="grid gap-4">
-          <div className="flex items-center space-x-4 rounded-md border p-4">
-            <Skeleton className="w-5 h-5 animate-none" />
-            <div className="flex-1 space-y-2">
-              <Skeleton className="w-1/2 h-4 animate-none" />
-              <Skeleton className="w-full h-4 animate-none" />
-            </div>
+    <Card className="w-full rounded-md border-zinc-light-border dark:border-zinc-dark-border">
+      <CardHeader className="space-y-2">
+        <div data-color-theme={targetColorTheme} className="w-full">
+          <Skeleton className="w-1/4 h-4 animate-none bg-primary" />
+        </div>
+        <Skeleton className="w-3/4 h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+      </CardHeader>
+      <CardContent className="grid gap-4">
+        <div className="flex items-center space-x-4 rounded-md p-4 border border-zinc-light-border dark:border-zinc-dark-border">
+          <Skeleton className="w-5 h-5 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+          <div className="flex-1 space-y-2">
+            <Skeleton className="w-1/2 h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+            <Skeleton className="w-full h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
           </div>
-        </CardContent>
-        <CardFooter>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <div data-color-theme={targetColorTheme} className="w-full">
           <Button
             size="sm"
+            variant="outline"
             onClick={handleColorThemeSelect}
             className="w-full capitalize"
           >
             {isMounted && targetColorTheme === colorTheme ?
               <CheckCircleIcon className="mr-2 h-4 w-4" /> : <CircleIcon className="mr-2 h-4 w-4" />
             }
-            <span>
+            <span className="truncate">
               {targetColorTheme} color theme
             </span>
           </Button>
-        </CardFooter>
-      </Card>
-    </div>
+        </div>
+      </CardFooter>
+    </Card>
   )
 }
