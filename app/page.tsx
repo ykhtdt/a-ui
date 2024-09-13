@@ -1,13 +1,4 @@
-import { CheckIcon } from "lucide-react"
-
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Skeleton } from "@/components/ui/skeleton"
 import {
   Carousel,
   CarouselContent,
@@ -18,11 +9,13 @@ import {
 
 import { ThemeColorSwitch } from "@/components/dropdown-menu/theme/theme-color-switch"
 import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
+
 import { ColorThemeCard } from "@/pages/home/ui/color-theme-card"
+import { Heading } from "@/shared/ui/heading"
 
 const Home = () => {
   return (
-    <div className="mt-4 flex-1">
+    <div className="flex-1">
       <div className="flex flex-col gap-8">
 
         <div className="flex flex-row justify-center gap-4">
@@ -62,6 +55,20 @@ const Home = () => {
             <CarouselNext className="static inset-auto translate-x-0 translate-y-0" />
           </div>
         </Carousel>
+
+        <div className="rounded-md border border-zinc-light-border dark:border-zinc-dark-border">
+          <div className="p-6">
+            <Heading as="1">
+              Lorem Ipsum
+            </Heading>
+            <Heading as="2" className="mt-6 border-b border-zinc-light-border pb-2 dark:border-zinc-dark-border">
+              What is Lorem Ipsum?
+            </Heading>
+            <Heading as="3" className="mt-4">
+              The standard Lorem Ipsum passage, used since the 1500s
+            </Heading>
+          </div>
+        </div>
 
         <div className="h-[1500px]" />
       </div>
