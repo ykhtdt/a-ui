@@ -20,7 +20,7 @@ export const ThemeColorSwitch = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Palette className="h-[1.2rem] w-[1.2rem]"/>
+          <Palette className="size-[1.2rem]"/>
           <span className="sr-only">Toggle theme color</span>
         </Button>
       </DropdownMenuTrigger>

@@ -22,7 +22,7 @@ import { ColorThemeCard } from "@/pages/home/ui/color-theme-card"
 
 const Home = () => {
   return (
-    <div className="flex-1 mt-4">
+    <div className="mt-4 flex-1">
       <div className="flex flex-col gap-8">
 
         <div className="flex flex-row justify-center gap-4">
@@ -30,7 +30,7 @@ const Home = () => {
           <ThemeSwitch />
         </div>
 
-        <div className="flex flex-row justify-center gap-4 flex-wrap">
+        <div className="flex flex-row flex-wrap justify-center gap-4">
           <Button variant="default">Button</Button>
           <Button variant="secondary">Button</Button>
           <Button variant="outline">Button</Button>
@@ -57,7 +57,7 @@ const Home = () => {
               <ColorThemeCard targetColorTheme="blue" />
             </CarouselItem>
           </CarouselContent>
-          <div className="relative flex justify-end gap-4 mt-4">
+          <div className="relative mt-4 flex justify-end gap-4">
             <CarouselPrevious className="static inset-auto translate-x-0 translate-y-0" />
             <CarouselNext className="static inset-auto translate-x-0 translate-y-0" />
           </div>

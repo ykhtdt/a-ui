@@ -34,7 +34,7 @@ export const Header = () => {
     <Sheet>
       <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-screen-2xl transition-all">
-          <div className="flex items-center h-14">
+          <div className="flex h-14 items-center">
             <div className="hidden sm:flex">
               <Link href="/" className="flex items-center space-x-2 lg:mr-6">
                 <svg
@@ -45,7 +45,7 @@ export const Header = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-5 w-5 a-ui-icon"
+                  className="size-5"
                 >
                   <path d="M12 20C7 20 4 16 4 12C4 8 7 4 12 4C17 4 20 8 20 12C20 14 19 17 16 17C14 17 12 14 12 12C12 9 14 7 17 7" />
                 </svg>
@@ -56,39 +56,39 @@ export const Header = () => {
             </div>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="sm:hidden">
-                <HamburgerMenuIcon className="h-5 w-5" />
+                <HamburgerMenuIcon className="size-5" />
               </Button>
             </SheetTrigger>
             <div className="flex flex-1 items-center justify-end space-x-2">
-              <nav className="flex items-center gap-8 text-sm lg:gap-10 transition-all">
-                <div className="hidden sm:flex items-center gap-4 lg:gap-6 transition-all">
-                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
+              <nav className="flex items-center gap-8 text-sm transition-all lg:gap-10">
+                <div className="hidden items-center gap-4 transition-all sm:flex lg:gap-6">
+                  <Link href="/" className="text-foreground/75 transition-colors hover:text-foreground">
                     Docs
                   </Link>
-                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="text-foreground/75 transition-colors hover:text-foreground">
                     Themes
                   </Link>
-                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="text-foreground/75 transition-colors hover:text-foreground">
                     Colors
                   </Link>
-                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="text-foreground/75 transition-colors hover:text-foreground">
                     Examples
                   </Link>
-                  <Link href="/" className="transition-colors text-foreground/75 hover:text-foreground">
+                  <Link href="/" className="text-foreground/75 transition-colors hover:text-foreground">
                     Figma
                   </Link>
                 </div>
-                <div className="flex items-center space-x-4 lg:space-x-6 transition-all">
+                <div className="flex items-center space-x-4 transition-all lg:space-x-6">
                   <Button
                     asChild
-                    className="p-0 w-5 h-5 border-none bg-inherit text-foreground shadow-none focus:outline-none focus-visible:ring-0 hover:bg-inherit"
+                    className="size-5 border-none bg-inherit p-0 text-foreground shadow-none hover:bg-inherit focus:outline-none focus-visible:ring-0"
                   >
                     <Link
                       href="https://github.com/ykhtdt/a-ui"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <GitHubLogoIcon className="w-4 h-4" />
+                      <GitHubLogoIcon className="size-4" />
                       <span className="sr-only">
                         JGPARK Github
                       </span>
@@ -96,10 +96,10 @@ export const Header = () => {
                   </Button>
                   <Button
                     onClick={handleThemeChange}
-                    className="p-0 w-5 h-5 border-none bg-inherit text-foreground shadow-none focus:outline-none focus-visible:ring-0 hover:bg-inherit"
+                    className="size-5 border-none bg-inherit p-0 text-foreground shadow-none hover:bg-inherit focus:outline-none focus-visible:ring-0"
                   >
-                    <SunIcon className="w-4 h-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <MoonIcon className="absolute w-4 h-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <SunIcon className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <MoonIcon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     <span className="sr-only">
                       Toggle theme
                     </span>
@@ -129,7 +129,7 @@ export const Header = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="h-5 w-5 a-ui-icon"
+              className="size-5"
             >
               <path d="M12 20C7 20 4 16 4 12C4 8 7 4 12 4C17 4 20 8 20 12C20 14 19 17 16 17C14 17 12 14 12 12C12 9 14 7 17 7" />
             </svg>
@@ -138,19 +138,19 @@ export const Header = () => {
             </span>
           </Link>
           <nav className="flex flex-col gap-4">
-            <Link href="/" className="text-foreground text-sm">
+            <Link href="/" className="text-sm text-foreground">
               Docs
             </Link>
-            <Link href="/" className="text-foreground text-sm">
+            <Link href="/" className="text-sm text-foreground">
               Themes
             </Link>
-            <Link href="/" className="text-foreground text-sm">
+            <Link href="/" className="text-sm text-foreground">
               Colors
             </Link>
-            <Link href="/" className="text-foreground text-sm">
+            <Link href="/" className="text-sm text-foreground">
               Examples
             </Link>
-            <Link href="/" className="text-foreground text-sm">
+            <Link href="/" className="text-sm text-foreground">
               Figma
             </Link>
           </nav>

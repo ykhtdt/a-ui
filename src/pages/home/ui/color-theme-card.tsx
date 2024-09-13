@@ -41,16 +41,16 @@ export const ColorThemeCard = ({
     <Card className="w-full rounded-md border-zinc-light-border dark:border-zinc-dark-border">
       <CardHeader className="space-y-2">
         <div data-color-theme={targetColorTheme} className="w-full">
-          <Skeleton className="w-1/4 h-4 animate-none bg-primary" />
+          <Skeleton className="h-4 w-1/4 animate-none bg-primary" />
         </div>
-        <Skeleton className="w-3/4 h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+        <Skeleton className="h-4 w-3/4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className="flex items-center space-x-4 rounded-md p-4 border border-zinc-light-border dark:border-zinc-dark-border">
-          <Skeleton className="w-5 h-5 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+        <div className="flex items-center space-x-4 rounded-md border border-zinc-light-border p-4 dark:border-zinc-dark-border">
+          <Skeleton className="size-5 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
           <div className="flex-1 space-y-2">
-            <Skeleton className="w-1/2 h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
-            <Skeleton className="w-full h-4 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+            <Skeleton className="h-4 w-1/2 animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
+            <Skeleton className="h-4 w-full animate-none bg-zinc-light-primary/10 dark:bg-zinc-dark-primary/10" />
           </div>
         </div>
       </CardContent>
@@ -63,7 +63,7 @@ export const ColorThemeCard = ({
             className="w-full capitalize"
           >
             {isMounted && targetColorTheme === colorTheme ?
-              <CheckCircleIcon className="mr-2 h-4 w-4" /> : <CircleIcon className="mr-2 h-4 w-4" />
+              <CheckCircleIcon className="mr-2 size-4" /> : <CircleIcon className="mr-2 size-4" />
             }
             <span className="truncate">
               {targetColorTheme} color theme
