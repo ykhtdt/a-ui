@@ -22,12 +22,12 @@ export interface HeadingProps extends React.HTMLProps<HTMLHeadingElement>, Varia
   as?: "1" | "2" | "3"
 }
 
-export default function Heading({
+const Heading = ({
   as,
   className,
   children,
   ...rest
-}: HeadingProps) {
+}: HeadingProps) => {
   const Component = `h${as}` as "h1" | "h2" | "h3"
 
   return (
@@ -36,3 +36,5 @@ export default function Heading({
     </Component>
   )
 }
+
+export { Heading, headingVariants }
