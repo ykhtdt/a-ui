@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-const headingVariants = cva(
+export const headingVariants = cva(
   "text-foreground",
   {
     variants: {
@@ -22,7 +22,7 @@ export interface HeadingProps extends React.HTMLProps<HTMLHeadingElement>, Varia
   as?: "1" | "2" | "3"
 }
 
-const Heading = ({
+export const Heading = ({
   as,
   className,
   children,
@@ -36,5 +36,3 @@ const Heading = ({
     </Component>
   )
 }
-
-export { Heading, headingVariants }
