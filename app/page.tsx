@@ -12,6 +12,7 @@ import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
 
 import { ColorThemeCard } from "@/pages/home/ui/color-theme-card"
 import { Heading } from "@/shared/ui/heading"
+import { Text } from "@/shared/ui/text"
 
 const Home = () => {
   return (
@@ -67,6 +68,11 @@ const Home = () => {
             <Heading as="3" className="mt-4">
               The standard Lorem Ipsum passage, used since the 1500s
             </Heading>
+            <Text as="p" className="mt-6">
+              Lorem Ipsum is a placeholder text commonly used in the printing, typesetting, and web design industries.
+              It has been the industry&apos;s standard dummy text since the 1500s,
+              when an unknown printer scrambled a section of text from a work by Cicero to create a type specimen book.
+            </Text>
           </div>
         </div>
 
