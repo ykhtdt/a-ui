@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
 
-import { pretendard, hahmlet, source } from "@/fonts/font"
 
-import { ThemeProvider } from "@/components/provider/theme/theme-provider"
-import { Header } from "@/components/header/header"
-import { Sidebar } from "@/components/aside/sidebar"
-import { TableOfContent } from "@/components/aside/table-of-content"
+import { pretendard, hahmlet, source } from "@/app/fonts"
+import { Header } from "@/app/layout"
 
-import "@/styles/globals.css"
-import "@/styles/theme.css"
+import { Providers } from "@/app/providers"
+import { Sidebar, TableOfContent } from "@/widgets/layout"
+
+import "@/app/styles/globals.css"
+import "@/app/styles/theme.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +23,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${pretendard.variable} ${hahmlet.variable} ${source.variable}`}>
-        <ThemeProvider defaultTheme="dark" defaultColorTheme="zinc">
+        <Providers>
           <div className="relative flex min-h-screen flex-col bg-background">
             <Header />
             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
@@ -36,7 +36,7 @@ const RootLayout = ({
               </main>
             </div>
           </div>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )

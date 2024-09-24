@@ -1,18 +1,17 @@
-import { Button } from "@/components/ui/button"
+import { ColorThemeCard } from "@/pages/home"
+import { ThemeColorSwitch, ThemeSwitch } from "@/features/theme"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+  Button,
 
-import { ThemeColorSwitch } from "@/components/dropdown-menu/theme/theme-color-switch"
-import { ThemeSwitch } from "@/components/dropdown-menu/theme/theme-switch"
+  Heading,
+  Text,
+} from "@/shared/ui"
 
-import { ColorThemeCard } from "@/pages/home/ui/color-theme-card"
-import { Heading } from "@/shared/ui/heading"
-import { Text } from "@/shared/ui/text"
 
 const Home = () => {
   return (

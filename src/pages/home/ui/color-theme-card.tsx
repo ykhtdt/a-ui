@@ -1,21 +1,22 @@
 "use client"
 
-import type { ColorTheme } from "@/components/provider/theme/theme-provider"
-
+import { CircleIcon, CheckCircleIcon } from "lucide-react"
 import { useContext, useEffect, useState } from "react"
 
-import { CircleIcon, CheckCircleIcon } from "lucide-react"
-
 import {
+  type ColorTheme,
+  ThemeContext,
+} from "@/features/theme"
+import {
+  Button,
+
+  Skeleton,
+
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Skeleton } from "@/components/ui/skeleton"
-
-import { ThemeContext } from "@/components/provider/theme/theme-provider"
+} from "@/shared/ui"
 
 import "./color-theme-card.css"
 
@@ -26,7 +27,7 @@ interface ColorThemeCardProps {
 export const ColorThemeCard = ({
   targetColorTheme,
 }: ColorThemeCardProps) => {
-  const { theme, colorTheme, setColorTheme } = useContext(ThemeContext)
+  const { colorTheme, setColorTheme } = useContext(ThemeContext)
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {

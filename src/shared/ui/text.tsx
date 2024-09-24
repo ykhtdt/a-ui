@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/shared/lib"
 
 export interface TextProps<T extends React.ElementType = "span"> extends React.HTMLAttributes<T> {
   as?: T;
